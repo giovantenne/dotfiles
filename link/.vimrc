@@ -21,6 +21,16 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+" Move to beginning and end of line easily
+nnoremap H ^
+nnoremap L $
+
+" Default charset encoding.
+set encoding=utf-8
+
+" The silver searcher
+let g:ag_working_path_mode="r"
+
 " Local dirs
 if !has('win32')
   set backupdir=$DOTFILES/caches/vim
@@ -227,8 +237,12 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let NERDTreeShowHidden = 1
 let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
-map <leader>n :NERDTreeToggle<CR>
+map <leader>d :NERDTreeToggle<CR>
+
+" Close VIM if the only window left open is a NERDTree
+au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 autocmd vimrc StdinReadPre * let s:std_in=1
+
 " If no file or directory arguments are specified, open NERDtree.
 " If a directory is specified as the only argument, open it in NERDTree.
 autocmd vimrc VimEnter *

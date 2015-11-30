@@ -1,9 +1,25 @@
-" Change mapleader
+" Leader key
 let mapleader=","
+
+" RSpec.vim mappings
+map <Leader>x :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+:imap kj <Esc>
+:imap jk <Esc>
+
+" quick save and quit!
+nnoremap s :w<CR>
 
 " Move more naturally up/down when wrapping is enabled.
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
 
 " Local dirs
 if !has('win32')
@@ -265,4 +281,11 @@ Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'terryma/vim-multiple-cursors'
 Plug 'wting/rust.vim', {'for': 'rust'}
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'thoughtbot/vim-rspec'
+Plug 'slim-template/vim-slim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
+Plug 'isRuslan/vim-es6'
 call plug#end()

@@ -302,4 +302,5 @@ Plug 'slim-template/vim-slim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'isRuslan/vim-es6'
+Plug 'tpope/vim-abolish'
 call plug#end()

@@ -52,6 +52,7 @@ packages=(
   sl
   telnet
   tree
+  tmux
 )
 
 packages=($(setdiff "${packages[*]}" "$(dpkg --get-selections | grep -v deinstall | awk '{print $1}')"))

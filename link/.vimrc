@@ -28,6 +28,10 @@ nnoremap L $
 " Default charset encoding.
 set encoding=utf-8
 
+" Airline tab
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " The silver searcher
 let g:ag_working_path_mode="r"
@@ -40,15 +44,12 @@ if !has('win32')
   let g:netrw_home = expand('$DOTFILES/caches/vim')
 endif
 
-" Create vimrc autocmd group and remove any existing vimrc autocmds,
-" in case .vimrc is re-sourced.
 augroup vimrc
   autocmd!
 augroup END
 
-" Theme / Syntax highlighting
+syntax enable
 
-" Make invisible chars less visible in terminal.
 autocmd vimrc ColorScheme * :hi NonText ctermfg=236
 autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
 " Show trailing whitespace.
@@ -58,11 +59,12 @@ autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
 autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
-let g:molokai_italic=0
-colorscheme molokai
-set background=dark
+" let g:molokai_italic=0
+" set t_Co=256
+" colorscheme molokai
+" set background=dark
+colorscheme default
 
-" Visual settings
 set cursorline " Highlight current line
 set number " Enable line numbers.
 set showtabline=2 " Always show tab bar.
@@ -77,8 +79,8 @@ autocmd vimrc InsertEnter * :set norelativenumber
 " autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+" set colorcolumn=+1
 
 " Scrolling
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -233,12 +235,12 @@ autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 " PLUGINS
 
 " Airline
-let g:airline_powerline_fonts = 1 " TODO: detect this?
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_format = '%s '
-let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#tabline#fnamecollapse = 0
-"let g:airline#extensions#tabline#fnamemod = ':t'
+" let g:airline_powerline_fonts = 1 " TODO: detect this?
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_format = '%s '
+" let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " NERDTree
 let NERDTreeShowHidden = 0
@@ -272,7 +274,9 @@ map <leader>r :CtrlPMRUFiles<CR>
 
 " Indent Guides
 " let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size = 1
+" Indent Guides
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1" let g:indent_guides_guide_size = 1
 
 "z == Indent Guides
 let g:indent_guides_auto_colors = 0

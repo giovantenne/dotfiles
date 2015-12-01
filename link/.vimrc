@@ -61,6 +61,7 @@ autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
 let g:molokai_italic=0
 colorscheme molokai
+" colorscheme badwolf
 set background=dark
 
 set cursorline " Highlight current line
@@ -324,4 +325,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'isRuslan/vim-es6'
 Plug 'tpope/vim-abolish'
+Plug 'rking/ag.vim'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'garbas/vim-snipmate'
+" Plug 'tomtom/tlib_vim'
 call plug#end()

@@ -59,11 +59,9 @@ autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
 autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 
-" let g:molokai_italic=0
-" set t_Co=256
-" colorscheme molokai
-" set background=dark
-colorscheme default
+let g:molokai_italic=0
+colorscheme molokai
+set background=dark
 
 set cursorline " Highlight current line
 set number " Enable line numbers.
@@ -79,8 +77,8 @@ autocmd vimrc InsertEnter * :set norelativenumber
 " autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
-" set textwidth=80
-" set colorcolumn=+1
+set textwidth=80
+set colorcolumn=+1
 
 " Scrolling
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -275,14 +273,15 @@ map <leader>r :CtrlPMRUFiles<CR>
 " Indent Guides
 " let g:indent_guides_start_level = 2
 " Indent Guides
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size = 1" let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+" let g:indent_guides_guide_size = 1
 
 "z == Indent Guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_enable_on_vim_startup = 1
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
+" let g:indent_guides_auto_colors = 0
+" let g:indent_guides_enable_on_vim_startup = 1
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
 
 
 

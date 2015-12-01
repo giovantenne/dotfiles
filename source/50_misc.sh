@@ -6,6 +6,7 @@ shopt -s nocaseglob
 shopt -s checkwinsize
 
 export GREP_OPTIONS='--color=auto'
+export TERM="screen-256color"
 
 # Prevent less from clearing the screen while still showing colors.
 export LESS=-XR

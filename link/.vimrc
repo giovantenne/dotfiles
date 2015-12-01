@@ -28,6 +28,7 @@ nnoremap L $
 " Default charset encoding.
 set encoding=utf-8
 
+
 " The silver searcher
 let g:ag_working_path_mode="r"
 
@@ -65,7 +66,7 @@ set background=dark
 set cursorline " Highlight current line
 set number " Enable line numbers.
 set showtabline=2 " Always show tab bar.
-set relativenumber " Use relative line numbers. Current line is still in status bar.
+" set relativenumber " Use relative line numbers. Current line is still in status bar.
 set title " Show the filename in the window titlebar.
 set nowrap " Do not wrap lines.
 set noshowmode " Don't show the current mode (airline.vim takes care of us)
@@ -73,7 +74,7 @@ set laststatus=2 " Always show status line
 
 " Show absolute numbers in insert mode, otherwise relative line numbers.
 autocmd vimrc InsertEnter * :set norelativenumber
-autocmd vimrc InsertLeave * :set relativenumber
+" autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
 set textwidth=80
@@ -121,6 +122,7 @@ endfunction
 
 set nolist
 call ToggleInvisibles()
+call ToggleInvisibles()
 
 " Trim extra whitespace
 function! StripExtraWhiteSpace()
@@ -133,9 +135,12 @@ noremap <leader>ss :call StripExtraWhiteSpace()<CR>
 
 " Search / replace
 set gdefault " By default add g flag to search/replace. Add g to toggle.
-set hlsearch " Highlight searches
+" set hlsearch " Highlight searches
 set incsearch " Highlight dynamically as pattern is typed.
 set ignorecase " Ignore case of searches.
+set matchtime=2
+set matchpairs+=<:>
+
 set smartcase " Ignore 'ignorecase' if search pattern contains uppercase characters.
 
 " Clear last search
@@ -149,7 +154,7 @@ set wildignore+=*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/log/*,*/tmp/*
 " Vim commands
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set report=0 " Show all changes.
-set mouse=a " Enable mouse in all modes.
+" set mouse=a " Enable mouse in all modes.
 set shortmess+=I " Hide intro menu.
 
 " Splits
@@ -223,6 +228,8 @@ autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
 
+
+
 " PLUGINS
 
 " Airline
@@ -234,13 +241,14 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "let g:airline#extensions#tabline#fnamemod = ':t'
 
 " NERDTree
-let NERDTreeShowHidden = 1
+let NERDTreeShowHidden = 0
 let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
 map <leader>d :NERDTreeToggle<CR>
 
 " Close VIM if the only window left open is a NERDTree
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 autocmd vimrc StdinReadPre * let s:std_in=1
 
 " If no file or directory arguments are specified, open NERDtree.
@@ -263,8 +271,18 @@ map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
 
 " Indent Guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
+
+"z == Indent Guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
+
+
+
+
 
 " Mustache/handlebars
 let g:mustache_abbreviations = 1

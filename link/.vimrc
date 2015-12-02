@@ -287,7 +287,6 @@ let g:indent_guides_guide_size = 1
 
 
 
-
 " Mustache/handlebars
 let g:mustache_abbreviations = 1
 

@@ -55,9 +55,11 @@ autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
 " Show trailing whitespace.
 autocmd vimrc ColorScheme * :hi ExtraWhitespace ctermbg=red guibg=red
 " Make selection more visible.
-autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
-autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
-autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
+" autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
+" autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
+" autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
+autocmd vimrc ColorScheme * :hi Visual term=reverse cterm=reverse guibg=Grey
+autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237  
 
 let g:molokai_italic=0
 colorscheme molokai
@@ -78,8 +80,8 @@ autocmd vimrc InsertEnter * :set norelativenumber
 " autocmd vimrc InsertLeave * :set relativenumber
 
 " Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" set textwidth=80
+" set colorcolumn=+1
 
 " Scrolling
 set scrolloff=3 " Start scrolling three lines before horizontal border of window.
@@ -275,17 +277,14 @@ map <leader>r :CtrlPMRUFiles<CR>
 " let g:indent_guides_start_level = 2
 " Indent Guides
 let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 2
 " let g:indent_guides_guide_size = 1
 
 "z == Indent Guides
 " let g:indent_guides_auto_colors = 0
 " let g:indent_guides_enable_on_vim_startup = 1
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
-
-
-
+" autocmd vimrc Colorscheme * :hi IndentGuidesOdd  ctermbg=240
+" autocmd vimrc Colorscheme * :hi IndentGuidesEven ctermbg=240
 
 " Mustache/handlebars
 let g:mustache_abbreviations = 1

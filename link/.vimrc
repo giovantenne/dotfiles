@@ -59,7 +59,7 @@ autocmd vimrc ColorScheme * :hi ExtraWhitespace ctermbg=red guibg=red
 " autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
 " autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 autocmd vimrc ColorScheme * :hi Visual term=reverse cterm=reverse guibg=Grey
-autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237  
+autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237
 
 let g:molokai_italic=0
 colorscheme molokai
@@ -172,7 +172,7 @@ nnoremap <C-H> <C-W>h
 
 " Buffer navigation
 nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
-map <leader><leader> :b#<CR> " Switch between the last two files
+map <leader>m :b#<CR> " Switch between the last two files
 map gb :bnext<CR> " Next buffer
 map gB :bprev<CR> " Prev buffer
 
@@ -317,6 +317,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'isRuslan/vim-es6'
 Plug 'tpope/vim-abolish'
 Plug 'rking/ag.vim'
+" Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'
 " Plug 'tomtom/tlib_vim'

@@ -286,9 +286,6 @@ let g:indent_guides_guide_size = 2
 " autocmd vimrc Colorscheme * :hi IndentGuidesOdd  ctermbg=240
 " autocmd vimrc Colorscheme * :hi IndentGuidesEven ctermbg=240
 
-" Mustache/handlebars
-let g:mustache_abbreviations = 1
-
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
@@ -309,12 +306,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'chase/vim-ansible-yaml'
-Plug 'wavded/vim-stylus'
 Plug 'klen/python-mode', {'for': 'python'}
 Plug 'terryma/vim-multiple-cursors'
-Plug 'wting/rust.vim', {'for': 'rust'}
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'

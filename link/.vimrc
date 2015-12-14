@@ -247,6 +247,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let NERDTreeShowHidden = 0
 let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows=0
 map <leader>d :NERDTreeToggle<CR>
 
 " Close VIM if the only window left open is a NERDTree

@@ -289,6 +289,13 @@ let g:indent_guides_guide_size = 2
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
+
+" for haya14busa/incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
@@ -318,6 +325,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'isRuslan/vim-es6'
 Plug 'tpope/vim-abolish'
 Plug 'rking/ag.vim'
+Plug 'tpope/vim-endwise'
+Plug 'svermeulen/vim-easyclip'
+Plug 'haya14busa/incsearch.vim'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

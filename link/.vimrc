@@ -172,8 +172,8 @@ nnoremap <C-H> <C-W>h
 
 " Buffer navigation
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
-noremap gb :CtrlPBuffer<CR> 
-map gm :b#<CR> " Switch between the last two files
+noremap <leader>b :CtrlPBuffer<CR> 
+map <leader>m :b#<CR> " Switch between the last two files
 map hj :bnext<CR> " Next buffer
 map jh :bprev<CR> " Prev buffer
 

@@ -174,8 +174,8 @@ nnoremap <C-H> <C-W>h
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
 noremap <leader>b :CtrlPBuffer<CR> 
 map <leader>m :b#<CR> " Switch between the last two files
-map hj :bnext<CR> " Next buffer
-map jh :bprev<CR> " Prev buffer
+map gn :bnext<cr> " next buffer
+map gb :bprev<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
 let c = 1

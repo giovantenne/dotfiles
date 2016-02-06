@@ -157,7 +157,7 @@ set wildignore+=*/vendor/*,*/.git/*,*/.hg/*,*/.svn/*,*/log/*,*/tmp/*
 " Vim commands
 set hidden " When a buffer is brought to foreground, remember undo history and marks.
 set report=0 " Show all changes.
-" set mouse=a " Enable mouse in all modes.
+set mouse=a " Enable mouse in all modes.
 set shortmess+=I " Hide intro menu.
 
 " Splits
@@ -246,7 +246,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " NERDTree
 let NERDTreeShowHidden = 0
-let NERDTreeMouseMode = 2
+" let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
 
 map <leader>d :NERDTreeToggle<CR>

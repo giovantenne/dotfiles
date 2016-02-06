@@ -5,7 +5,7 @@ let mapleader=","
 map <Leader>x :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+
 
 :imap kj <Esc>
 :imap jk <Esc>
@@ -280,13 +280,13 @@ map <leader>r :CtrlPMRUFiles<CR>
 " Indent Guides
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 2
-" let g:indent_guides_guide_size = 1
+let g:indent_guides_guide_size = 1
 
 "z == Indent Guides
-" let g:indent_guides_auto_colors = 0
-" let g:indent_guides_enable_on_vim_startup = 1
-" autocmd vimrc Colorscheme * :hi IndentGuidesOdd  ctermbg=240
-" autocmd vimrc Colorscheme * :hi IndentGuidesEven ctermbg=240
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd vimrc Colorscheme * :hi IndentGuidesOdd  ctermbg=240
+autocmd vimrc Colorscheme * :hi IndentGuidesEven ctermbg=240
 
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
@@ -327,7 +327,7 @@ Plug 'isRuslan/vim-es6'
 Plug 'tpope/vim-abolish'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
-Plug 'svermeulen/vim-easyclip'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'

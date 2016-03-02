@@ -296,6 +296,16 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+if has("autocmd")
+    au InsertEnter *
+        \ if v:insertmode == 'i' |
+        \   silent execute "!gnome-terminal-cursor-shape.sh ibeam" |
+        \ elseif v:insertmode == 'r' |
+        \   silent execute "!gnome-terminal-cursor-shape.sh underline" |
+        \ endif
+    au InsertLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
+    au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
+endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'

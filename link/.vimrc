@@ -66,6 +66,7 @@ colorscheme molokai
 " colorscheme badwolf
 set background=dark
 
+
 set cursorline " Highlight current line
 set number " Enable line numbers.
 set showtabline=2 " Always show tab bar.
@@ -174,8 +175,8 @@ nnoremap <C-H> <C-W>h
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
 noremap <leader>b :CtrlPBuffer<CR> 
 map <leader>m :b#<CR> " Switch between the last two files
-map gn :bnext<cr> " next buffer
-map gb :bprev<CR> " Prev buffer
+map gn :BufSurfForward<cr> " next buffer
+map gb :BufSurfBack<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
 let c = 1
@@ -329,6 +330,7 @@ Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
+Plug 'ton/vim-bufsurf'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

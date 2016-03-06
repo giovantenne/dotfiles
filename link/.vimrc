@@ -249,7 +249,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let NERDTreeShowHidden = 0
 " let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
-let g:NERDTreeMapMenu = 'n'
 
 map <leader>d :NERDTreeToggle<CR>
 
@@ -308,6 +307,11 @@ if has("autocmd")
     au InsertLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
     au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
 endif
+
+let g:EasyClipUseCutDefaults = 0
+nmap c <Plug>MoveMotionPlug
+xmap c <Plug>MoveMotionXPlug
+nmap cc <Plug>MoveMotionLinePlug
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'

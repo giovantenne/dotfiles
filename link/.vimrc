@@ -249,6 +249,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let NERDTreeShowHidden = 0
 " let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
+let g:NERDTreeMapMenu = 'n'
 
 map <leader>d :NERDTreeToggle<CR>
 

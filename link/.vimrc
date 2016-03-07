@@ -309,7 +309,8 @@ if has("autocmd")
 endif
 
 let g:EasyClipUseCutDefaults = 0
-nmap c <Plug>MoveMotionPlug
+
+" nmap c <Plug>MoveMotionPlug
 xmap c <Plug>MoveMotionXPlug
 nmap cc <Plug>MoveMotionLinePlug
 

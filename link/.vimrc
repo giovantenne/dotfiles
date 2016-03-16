@@ -250,7 +250,7 @@ let NERDTreeShowHidden = 0
 " let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
 
-map <leader>d :NERDTreeToggle<CR>
+map <leader>f :NERDTreeToggle<CR>
 
 " Close VIM if the only window left open is a NERDTree
 au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

@@ -173,7 +173,7 @@ nnoremap <C-H> <C-W>h
 
 " Buffer navigation
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
-noremap <leader>b :CtrlPBuffer<CR> 
+noremap <leader>b :CtrlPBuffer<CR>
 map <leader>m :b#<CR> " Switch between the last two files
 map gn :BufSurfForward<cr> " next buffer
 map gb :BufSurfBack<CR> " Prev buffer
@@ -308,11 +308,9 @@ if has("autocmd")
     au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
 endif
 
-let g:EasyClipUseCutDefaults = 0
-
-" nmap c <Plug>MoveMotionPlug
-xmap c <Plug>MoveMotionXPlug
-nmap cc <Plug>MoveMotionLinePlug
+nmap <leader>dd "xdd
+vmap <leader>d "xd
+nmap <leader>p "xp
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
@@ -344,7 +342,7 @@ Plug 'isRuslan/vim-es6'
 Plug 'tpope/vim-abolish'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
-Plug 'svermeulen/vim-easyclip'
+" Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ton/vim-bufsurf'
 " Plug 'Valloric/YouCompleteMe'

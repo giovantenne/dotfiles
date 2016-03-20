@@ -17,6 +17,9 @@ nnoremap s :w<CR>
 nnoremap j gj
 nnoremap k gk
 
+" stop entering in ex mode
+nnoremap Q <nop>
+
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
@@ -209,22 +212,7 @@ autocmd vimrc BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-" F12: Source .vimrc & .gvimrc files
-nmap <F12> :call SourceConfigs()<CR>
 
-if !exists("*SourceConfigs")
-  function! SourceConfigs()
-    let files = ".vimrc"
-    source $MYVIMRC
-    if has("gui_running")
-      let files .= ", .gvimrc"
-      source $MYGVIMRC
-    endif
-    echom "Sourced " . files
-  endfunction
-endif
-
-"" FILE TYPES
 
 " vim
 autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
@@ -317,7 +305,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
@@ -325,7 +313,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', {'for': 'go'}
+" Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mhinz/vim-signify'

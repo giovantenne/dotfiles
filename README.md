@@ -108,10 +108,10 @@ Since you'll be using the [dotfiles][dotfiles] command on subsequent runs, you'l
 
 There's a lot of stuff that requires admin access via `sudo`, so be warned that you might need to enter your password here or there.
 
-### Actual installation (for me)
+### Vim only installation (for me)
 
 ```sh
-bash -c "$(curl -fsSL https://bit.ly/cowboy-dotfiles)" && source ~/.bashrc
+bash -c "$(curl -fsSL https://raw.github.com/zener79/dotfiles/master/bin/pure-vim)"
 ```
 
 ## Aliases and Functions

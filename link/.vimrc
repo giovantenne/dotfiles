@@ -41,10 +41,10 @@ let g:ag_working_path_mode="r"
 
 " Local dirs
 if !has('win32')
-  set backupdir=$DOTFILES/caches/vim
-  set directory=$DOTFILES/caches/vim
-  set undodir=$DOTFILES/caches/vim
-  let g:netrw_home = expand('$DOTFILES/caches/vim')
+  set backupdir=~/.dotfiles/caches/vim
+  set directory=~/.dotfiles/caches/vim
+  set undodir=~/.dotfiles/caches/vim
+  let g:netrw_home = expand('~/.dotfiles/caches/vim')
 endif
 
 augroup vimrc

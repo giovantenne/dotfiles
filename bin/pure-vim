@@ -2,7 +2,8 @@
 sudo apt-get update
 sudo apt-get install git-core 
 git clone git://github.com/zener79/dotfiles.git ~/.dotfiles
-sudo apt-get install tmux vim silversearcher-ag gvim 
+sudo apt-get install tmux vim silversearcher-ag 
+sudo apt-get install gvim
 cp ~/.dotfiles/link/.vimrc ~
 cp -R ~/.dotfiles/link/.vim ~
 cp ~/.dotfiles/link/.tmux.conf ~

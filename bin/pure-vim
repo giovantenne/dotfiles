@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-cd
 sudo apt-get update
 sudo apt-get install git-core tmux vim gvim silversearcher-ag
-git clone git://github.com/zener79/dotfiles.git .dotfiles
-cp .dotfiles/link/.vimrc ~
-cp -R .dotfiles/link/.vim ~
-cp .dotfiles/link/.tmux.conf ~
-~/.dotfiles/init/50_vim.sh
+git clone git://github.com/zener79/dotfiles.git ~/.dotfiles
+cp ~/.dotfiles/link/.vimrc ~
+cp -R ~/.dotfiles/link/.vim ~
+cp ~/.dotfiles/link/.tmux.conf ~
+source ~/.dotfiles/init/50_vim.sh

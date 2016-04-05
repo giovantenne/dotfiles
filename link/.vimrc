@@ -65,7 +65,6 @@ autocmd vimrc ColorScheme * :hi Visual term=reverse cterm=reverse guibg=Grey
 autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237
 
 let g:molokai_italic=0
-let g:user_emmet_leader_key='<C-Z>'
 colorscheme molokai
 " colorscheme badwolf
 set background=dark
@@ -242,7 +241,7 @@ let NERDTreeMinimalUI = 1
 map <leader>f :NERDTreeToggle<CR>
 
 " Close VIM if the only window left open is a NERDTree
-au bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 autocmd vimrc StdinReadPre * let s:std_in=1
 
@@ -264,6 +263,8 @@ let g:signify_vcs_list = ['git', 'hg', 'svn']
 map <leader>p <C-P>
 map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
+
+let g:user_emmet_leader_key='<C-Z>'
 
 " Indent Guides
 " let g:indent_guides_start_level = 2

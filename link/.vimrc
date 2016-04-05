@@ -65,6 +65,7 @@ autocmd vimrc ColorScheme * :hi Visual term=reverse cterm=reverse guibg=Grey
 autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237
 
 let g:molokai_italic=0
+let g:user_emmet_leader_key='<C-Z>'
 colorscheme molokai
 " colorscheme badwolf
 set background=dark

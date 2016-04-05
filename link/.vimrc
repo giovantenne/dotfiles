@@ -296,6 +296,8 @@ map g/ <Plug>(incsearch-stay)
 "     au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
 " endif
 
+let g:jsx_ext_required = 0
+
 nmap <leader>dd "xdd
 vmap <leader>d "xd
 nmap <leader>p "xp
@@ -333,6 +335,7 @@ Plug 'tpope/vim-endwise'
 " Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ton/vim-bufsurf'
+Plug 'mxw/vim-jsx'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

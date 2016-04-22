@@ -58,9 +58,6 @@ autocmd vimrc ColorScheme * :hi SpecialKey ctermfg=236
 " Show trailing whitespace.
 autocmd vimrc ColorScheme * :hi ExtraWhitespace ctermbg=red guibg=red
 " Make selection more visible.
-" autocmd vimrc ColorScheme * :hi Visual guibg=#00588A
-" autocmd vimrc ColorScheme * :hi link multiple_cursors_cursor Search
-" autocmd vimrc ColorScheme * :hi link multiple_cursors_visual Visual
 autocmd vimrc ColorScheme * :hi Visual term=reverse cterm=reverse guibg=Grey
 autocmd vimrc ColorScheme * :hi CursorLine   cterm=NONE ctermbg=237
 
@@ -212,24 +209,12 @@ autocmd vimrc BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
-
-
-" vim
 autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 
 " markdown
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
-
-
-
-" PLUGINS
-
 " Airline
-" let g:airline_powerline_fonts = 1 " TODO: detect this?
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#buffer_nr_format = '%s '
-" let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 
@@ -267,18 +252,11 @@ map <leader>r :CtrlPMRUFiles<CR>
 let g:user_emmet_leader_key='<C-X>'
 
 " Indent Guides
-" let g:indent_guides_start_level = 2
-" Indent Guides
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 2
-let g:indent_guides_guide_size = 1
-
-"z == Indent Guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
-autocmd vimrc Colorscheme * :hi IndentGuidesOdd  ctermbg=240
-autocmd vimrc Colorscheme * :hi IndentGuidesEven ctermbg=240
-
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=240
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
+"
 " https://github.com/junegunn/vim-plug
 " Reload .vimrc and :PlugInstall to install plugins.
 
@@ -287,28 +265,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" if has("autocmd")
-"     au InsertEnter *
-"         \ if v:insertmode == 'i' |
-"         \   silent execute "!gnome-terminal-cursor-shape.sh ibeam" |
-"         \ elseif v:insertmode == 'r' |
-"         \   silent execute "!gnome-terminal-cursor-shape.sh underline" |
-"         \ endif
-"     au InsertLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
-"     au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
-" endif
 
-
-if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' | 
-    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
-endif
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 let g:jsx_ext_required = 0
 

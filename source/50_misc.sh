@@ -5,7 +5,7 @@ shopt -s nocaseglob
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-export GREP_OPTIONS='--color=auto'
+# export GREP_OPTIONS='--color=auto'
 export TERM="screen-256color"
 
 # Prevent less from clearing the screen while still showing colors.

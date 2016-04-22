@@ -298,6 +298,18 @@ map g/ <Plug>(incsearch-stay)
 "     au VimLeave * silent execute "!gnome-terminal-cursor-shape.sh block"
 " endif
 
+
+if has("autocmd")
+  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+  au InsertEnter,InsertChange *
+    \ if v:insertmode == 'i' | 
+    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
+    \ elseif v:insertmode == 'r' |
+    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
+    \ endif
+  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+endif
+
 let g:jsx_ext_required = 0
 
 nmap <leader>dd "xdd

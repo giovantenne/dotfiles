@@ -264,7 +264,7 @@ map <leader>p <C-P>
 map <leader>r :CtrlPMRUFiles<CR>
 "let g:ctrlp_match_window_bottom = 0 " Show at top of window
 
-let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_leader_key='<C-X>'
 
 " Indent Guides
 " let g:indent_guides_start_level = 2

@@ -254,6 +254,7 @@ let g:user_emmet_leader_key='<C-X>'
 " Indent Guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['nerdtree']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=240
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
 "

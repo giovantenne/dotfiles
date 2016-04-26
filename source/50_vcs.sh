@@ -1,3 +1,5 @@
+alias rs='rails s -b 0.0.0.0'
+alias rc='rails c'
 
 # Git shortcuts
 

@@ -27,6 +27,8 @@ set showmode
 " Move to beginning and end of line easily
 nnoremap H ^
 nnoremap L $
+vnoremap H ^
+vnoremap L g_
 
 " Default charset encoding.
 set encoding=utf-8

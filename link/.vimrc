@@ -290,9 +290,21 @@ endif
 
 let g:jsx_ext_required = 0
 
+noremap <leader>gr :vsplit config/routes.rb<cr>
+noremap <leader>gs :vsplit db/schema.rb<cr>
+noremap <leader>gg :vsplit Gemfile<cr>
+
+nnoremap <leader>v :execute "vsplit " . bufname("#")<CR>
+nnoremap <leader>x :execute "split " . bufname("#")<CR>
+nnoremap <leader>q :q<CR>
+
+vmap <Leader>z :call I18nTranslateString()<CR>
+vmap <Leader>dt :call I18nDisplayTranslation()<CR>
+
 nmap <leader>dd "xdd
 vmap <leader>d "xd
-nmap <leader>p "xp
+vmap <leader>y "xy
+map <leader>p "xp
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
@@ -328,6 +340,7 @@ Plug 'tpope/vim-endwise'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'mxw/vim-jsx'
+Plug 'stefanoverna/vim-i18n'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

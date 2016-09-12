@@ -2,9 +2,9 @@
 let mapleader=","
 
 " RSpec.vim mappings
-map <Leader>x :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>x :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
 
 
 :imap kj <Esc>
@@ -341,6 +341,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'ton/vim-bufsurf'
 Plug 'mxw/vim-jsx'
 Plug 'stefanoverna/vim-i18n'
+Plug 'henrik/vim-qargs'
+Plug 'stefanoverna/vim-plumber'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

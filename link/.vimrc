@@ -112,7 +112,7 @@ else
 endif
 "set listchars=tab:>\ ,trail:.,eol:$,nbsp:_,extends:>,precedes:<
 "set fillchars=fold:-
-nnoremap <silent> <leader>v :call ToggleInvisibles()<CR>
+nnoremap <silent> <leader>vv :call ToggleInvisibles()<CR>
 
 " Extra whitespace
 autocmd vimrc BufWinEnter * :2match ExtraWhitespaceMatch /\s\+$/
@@ -279,7 +279,7 @@ else
   if has("autocmd")
     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
     au InsertEnter,InsertChange *
-      \ if v:insertmode == 'i' | 
+      \ if v:insertmode == 'i' |
       \   silent execute '!echo -ne "\e[6 q"' | redraw! |
       \ elseif v:insertmode == 'r' |
       \   silent execute '!echo -ne "\e[4 q"' | redraw! |

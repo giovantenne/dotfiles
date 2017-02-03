@@ -270,11 +270,14 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=NONE
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-
 if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
+  " let &t_SR = "\<Esc>Ptmux;\<Esc>\e[1 q\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\e[2 q\<Esc>\\"
+
+  " let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  " let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+  " let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 else
   if has("autocmd")
     au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
@@ -345,6 +348,7 @@ Plug 'stefanoverna/vim-plumber'
 Plug 'elixir-lang/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'mbbill/undotree'
+Plug 'kchmck/vim-coffee-script'
 " Plug 'Valloric/YouCompleteMe'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'

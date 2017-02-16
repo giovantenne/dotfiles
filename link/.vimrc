@@ -18,8 +18,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Easier access to system clipboard
-nnoremap P "*p
-nnoremap Y "*y
+" nnoremap P "*p
+" nnoremap Y "*y
 
 " stop entering in ex mode
 nnoremap Q <nop>

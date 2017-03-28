@@ -28,3 +28,9 @@ src
 export PATH="/usr/local/heroku/bin:$PATH"
 ## To prioritize local bin folder (eg. rspec)
 export PATH="./bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/claudio/google-cloud-sdk/path.bash.inc' ]; then source '/home/claudio/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/claudio/google-cloud-sdk/completion.bash.inc' ]; then source '/home/claudio/google-cloud-sdk/completion.bash.inc'; fi

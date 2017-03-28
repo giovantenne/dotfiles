@@ -72,6 +72,7 @@ let g:molokai_italic=0
 " color dracula
 " color monokai
 color molokai
+" color railscasts
 " colorscheme badwolf
 set background=dark
 

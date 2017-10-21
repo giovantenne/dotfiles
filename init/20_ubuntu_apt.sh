@@ -39,19 +39,10 @@ sudo apt-get -qq dist-upgrade
 
 # Install APT packages.
 packages=(
-  ansible
   build-essential
-  cowsay
+  gcc-6
   git-core
-  htop
-  id3tool
-  libssl-dev
-  mercurial
-  nmap
   silversearcher-ag
-  sl
-  telnet
-  tree
   tmux
   vim-gnome
 )

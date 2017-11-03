@@ -8,6 +8,7 @@ function ga() { git add "${@:-.}"; } # Add all files by default
 alias gp='git push'
 alias gpo='git push origin master'
 alias gph='git push heroku master'
+alias hrrc='heroku run rails c'
 alias gps='git push staging master'
 alias gpp='git push production master'
 alias gpa='gp --all'

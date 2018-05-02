@@ -5,7 +5,7 @@ echo 'Dotfiles - zener79'
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mv $DIR ~/.dotfiles
 
-for DOTFILE in `find ~/.dotfiles/link`
+for DOTFILE in `find ~/.dotfiles/link -maxdepth 1`
 do
   [ -f "$DOTFILE" ] && ln -sv "$DOTFILE" ~
 done

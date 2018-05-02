@@ -7,7 +7,7 @@ mv $DIR ~/.dotfiles
 
 for DOTFILE in `find ~/.dotfiles/link`
 do
-  [ -f “$DOTFILE” ] && ln -sv “$DOTFILE” ~
+  [ -f "$DOTFILE" ] && ln -sv "$DOTFILE" ~
 done
 
 

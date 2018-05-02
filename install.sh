@@ -10,15 +10,8 @@ do
   [ -f "$DOTFILE" ] && ln -sv "$DOTFILE" ~
 done
 
-
-
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim
-
-# Download Vim plugins.
-if [[ "$(type -P vim)" ]]; then
-  vim +PlugUpgrade +PlugUpdate +qall
-fi
 
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
@@ -28,3 +21,8 @@ _Z_DATA=~/.dotfiles/caches/z/z
 
 sudo apt-get -qq update
 sudo apt-get -qq install git-core silversearcher-ag tmux vim
+
+# Download Vim plugins.
+if [[ "$(type -P vim)" ]]; then
+  vim +PlugUpgrade +PlugUpdate +qall
+fi

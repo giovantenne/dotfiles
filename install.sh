@@ -31,10 +31,9 @@ else
     echo "(3) wrong password"
     exit 1
   fi
-  sudo apt-get -qq update
-  sudo apt-get -qq install git-core silversearcher-ag tmux vim
+  sudo apt-get -qq update || "no sudo user!"
+  sudo apt-get -qq install git-core silversearcher-ag tmux vim || "no sudo user!"
 fi
-
 
 # Download Vim plugins.
 if [[ "$(type -P vim)" ]]; then

@@ -22,6 +22,9 @@ mkdir -p ~/.dotfiles/caches/vim
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
 
+git config --global user.email "claudio@benve.it"
+git config --global user.name "Claudio Benvenuti"
+
 
 if [[ "$EUID" = 0 ]]; then
   apt-get -qq update

@@ -3,6 +3,9 @@ alias ...='cd ../..'
 alias fs="stat -f '%z bytes'"
 alias df="df -h"
 
+# Always use color output for `ls`
+alias ls="command ls --color"
+
 # View HTTP traffic
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
 alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"

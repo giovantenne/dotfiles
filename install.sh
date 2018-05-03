@@ -29,7 +29,6 @@ else
     echo "(2) correct password"
   else
     echo "(3) wrong password"
-    exit 1
   fi
   sudo apt-get -qq update || "no sudo user!"
   sudo apt-get -qq install git-core silversearcher-ag tmux vim || "no sudo user!"

@@ -12,15 +12,12 @@ do
   ln -sfv "$DOTFILE" ~/
 done
 
-ln -sfv ~/.dotfiles/.dotfiles ~/
-source ~/.dotfiles
-echo ". ~/.dotfiles" >> ~/.bashrc
+ln -sfv ~/.dotfiles/.dotfiles_linker ~/
+source ~/.dotfiles_linker
+echo ". ~/.dotfiles_linker" >> ~/.bashrc
 
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim
-
-# Fast directory switching
-mkdir -p ~/.dotfiles/caches/z
 
 git config --global user.email "claudio@benve.it"
 git config --global user.name "Claudio Benvenuti"

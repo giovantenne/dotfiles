@@ -10,6 +10,7 @@ do
   ln -sv "$DOTFILE" ~/
 done
 
+ln -sv ~/.dotfiles/.bash_profile ~/
 source ~/.bash_profile
 
 # Backups, swaps and undos are stored here.
@@ -17,9 +18,6 @@ mkdir -p ~/.dotfiles/caches/vim
 
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
-_Z_NO_PROMPT_COMMAND=1
-_Z_DATA=~/.dotfiles/caches/z/z
-. ~/.dotfiles/bin/z.sh
 
 sudo apt-get -qq update
 sudo apt-get -qq install git-core silversearcher-ag tmux vim

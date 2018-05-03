@@ -12,6 +12,7 @@ done
 
 ln -sv ~/.dotfiles/.bash_profile ~/
 source ~/.bash_profile
+echo ". ~/.bash_profile" >> ~/.bashrc
 
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim
@@ -19,8 +20,21 @@ mkdir -p ~/.dotfiles/caches/vim
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
 
-sudo apt-get -qq update
-sudo apt-get -qq install git-core silversearcher-ag tmux vim
+if [[ "$EUID" = 0 ]]; then
+  apt-get -qq update
+  apt-get -qq install git-core silversearcher-ag tmux vim
+else
+  sudo -k # make sure to ask for password on next sudo
+  if sudo true; then
+    echo "(2) correct password"
+  else
+    echo "(3) wrong password"
+    exit 1
+  fi
+  sudo apt-get -qq update
+  sudo apt-get -qq install git-core silversearcher-ag tmux vim
+fi
+
 
 # Download Vim plugins.
 if [[ "$(type -P vim)" ]]; then

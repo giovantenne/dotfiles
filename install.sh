@@ -2,6 +2,8 @@
 
 echo 'Dotfiles - zener79'
 
+APPS="git-core silversearcher-ag tmux vim"
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mv $DIR ~/.dotfiles
 
@@ -20,7 +22,7 @@ mkdir -p ~/.dotfiles/caches/vim
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
 
-APPS="git-core silversearcher-ag tmux vim"
+
 if [[ "$EUID" = 0 ]]; then
   apt-get -qq update
   apt-get -qq install $APPS

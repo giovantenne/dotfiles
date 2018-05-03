@@ -12,9 +12,9 @@ do
   ln -sfv "$DOTFILE" ~/
 done
 
-ln -sfv ~/.dotfiles/.bash_profile ~/
-source ~/.bash_profile
-echo ". ~/.bash_profile" >> ~/.bashrc
+ln -sfv ~/.dotfiles/.dotfiles ~/
+source ~/.dotfiles
+echo ". ~/.dotfiles" >> ~/.bashrc
 
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim

@@ -5,9 +5,9 @@ echo 'Dotfiles - zener79'
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 mv $DIR ~/.dotfiles
 
-for DOTFILE in `find ~/.dotfiles/link -maxdepth 1`
+for DOTFILE in `find ~/.dotfiles/link -maxdepth 1  | sed 1,1d`
 do
-  [ -f "$DOTFILE" ] && ln -sv "$DOTFILE" ~
+  ln -sv "$DOTFILE" ~/
 done
 
 # Backups, swaps and undos are stored here.

@@ -13,6 +13,7 @@ fi
 
 # Always use color output for `ls`
 alias ls="command ls --color"
+alias lla="ls -la"
 
 # View HTTP traffic
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""

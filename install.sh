@@ -30,8 +30,8 @@ else
   else
     echo "(3) wrong password"
   fi
-  sudo apt-get -qq update || "no sudo user!"
-  sudo apt-get -qq install git-core silversearcher-ag tmux vim || "no sudo user!"
+  sudo apt-get -qq update
+  sudo apt-get -qq install git-core silversearcher-ag tmux vim
 fi
 
 # Download Vim plugins.

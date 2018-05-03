@@ -7,10 +7,10 @@ mv $DIR ~/.dotfiles
 
 for DOTFILE in `find ~/.dotfiles/link -maxdepth 1  | sed 1,1d`
 do
-  ln -sv "$DOTFILE" ~/
+  ln -sfv "$DOTFILE" ~/
 done
 
-ln -sv ~/.dotfiles/.bash_profile ~/
+ln -sfv ~/.dotfiles/.bash_profile ~/
 source ~/.bash_profile
 echo ". ~/.bash_profile" >> ~/.bashrc
 

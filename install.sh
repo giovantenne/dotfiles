@@ -20,18 +20,13 @@ mkdir -p ~/.dotfiles/caches/vim
 # Fast directory switching
 mkdir -p ~/.dotfiles/caches/z
 
+APPS="git-core silversearcher-ag tmux vim"
 if [[ "$EUID" = 0 ]]; then
   apt-get -qq update
-  apt-get -qq install git-core silversearcher-ag tmux vim
+  apt-get -qq install $APPS
 else
-  sudo -k # make sure to ask for password on next sudo
-  if sudo true; then
-    echo "(2) correct password"
-  else
-    echo "(3) wrong password"
-  fi
   sudo apt-get -qq update
-  sudo apt-get -qq install git-core silversearcher-ag tmux vim
+  sudo apt-get -qq install $APPS
 fi
 
 # Download Vim plugins.

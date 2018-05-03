@@ -10,6 +10,8 @@ do
   ln -sv "$DOTFILE" ~/
 done
 
+source ~/.bash_profile
+
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim
 

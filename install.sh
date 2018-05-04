@@ -15,7 +15,7 @@ done
 ln -sfv ~/.dotfiles/.dotfiles_linker ~/
 source ~/.dotfiles_linker
 
-grep -q -F ". ~/.dotfiles_linker" ~/.bashrc || echo ". ~/.dotfiles_linker" >> ~.bashrc
+grep -q -F ". ~/.dotfiles_linker" ~/.bashrc || echo ". ~/.dotfiles_linker" >> ~/.bashrc
 
 # Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim

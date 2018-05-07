@@ -28,6 +28,7 @@ alias rs='rails s -b 0.0.0.0'
 alias rc='rails c'
 
 alias gp='git push'
+alias ga='git add .'
 alias gpo='git push origin master'
 alias gph='git push heroku master'
 alias hrrc='heroku run rails c'

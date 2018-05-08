@@ -2,7 +2,7 @@
 
 echo 'Dotfiles - zener79'
 
-APPS="git-core silversearcher-ag tmux vim vim-gtk"
+APPS="git-core silversearcher-ag tmux vim"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if [[ $DIR != ~/.dotfiles ]]; then

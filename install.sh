@@ -5,19 +5,19 @@ echo 'Dotfiles - zener79'
 APPS="git-core silversearcher-ag tmux vim"
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-mv $DIR ~/.dotfiles
+if [[ $DIR != ~/.dotfiles ]]; then
+  mv $DIR ~/.dotfiles
+fi
 
 for DOTFILE in `find ~/.dotfiles/link -maxdepth 1  | sed 1,1d`
 do
   ln -sfv "$DOTFILE" ~/
 done
 
-# Backups, swaps and undos are stored here.
 mkdir -p ~/.dotfiles/caches/vim
 
 git config --global user.email "claudio@benve.it"
 git config --global user.name "Claudio Benvenuti"
-
 
 if [[ "$EUID" = 0 ]]; then
   apt-get -qq update

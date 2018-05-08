@@ -24,8 +24,9 @@ alias install="sudo apt-get install"
 alias remove="sudo apt-get remove"
 alias search="apt-cache search"
 
-alias rs='rails s -b 0.0.0.0'
+alias rs='rails s'
 alias rc='rails c'
+alias besk='bundle exec sidekiq'
 
 alias gp='git push'
 alias ga='git add .'

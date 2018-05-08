@@ -5,4 +5,8 @@ do
   [ -f "$DOTFILE" ] && source "$DOTFILE"
 done
 
+if [ -n "$BASH" ] && [ -r ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
 

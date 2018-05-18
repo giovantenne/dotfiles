@@ -29,6 +29,8 @@ alias rs='rails s'
 alias rc='rails c'
 alias besk='bundle exec sidekiq'
 
+alias es='docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4'
+
 alias gp='git push'
 alias ga='git add .'
 alias gpo='git push origin master'

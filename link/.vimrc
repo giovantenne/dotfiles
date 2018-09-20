@@ -314,7 +314,7 @@ vmap <leader>d "xd
 vmap <leader>y "xy
 map <leader>p "xp
 
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'

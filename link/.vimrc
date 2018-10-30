@@ -234,7 +234,7 @@ let NERDTreeShowHidden = 0
 let NERDTreeMinimalUI = 1
 
 map <leader>f :NERDTreeToggle<CR>
-" press C to enter 
+" press C to change the current directory
 " press U to move up from starting directory
 
 " Close VIM if the only window left open is a NERDTree

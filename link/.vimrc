@@ -41,6 +41,20 @@ set encoding=utf-8
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+" Airline
+let g:airline#extensions#tabline#fnamecollapse = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='powerlineish'
+" let g:airline#extensions#syntastic#enabled = 1
+" set laststatus=2
+
+
+
+
 
 " The silver searcher
 let g:ag_working_path_mode="r"
@@ -185,8 +199,8 @@ nnoremap <C-H> <C-W>h
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
 noremap <leader>b :CtrlPBuffer<CR>
 map <leader>m :b#<CR> " Switch between the last two files
-map gn :BufSurfForward<cr> " next buffer
-map gb :BufSurfBack<CR> " Prev buffer
+map gn :bn<cr> " next buffer
+map gb :bp<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
 let c = 1
@@ -224,9 +238,6 @@ autocmd vimrc BufRead .vimrc,*.vim set keywordprg=:help
 " markdown
 autocmd vimrc BufRead,BufNewFile *.md set filetype=markdown
 
-" Airline
-let g:airline#extensions#tabline#fnamecollapse = 0
-let g:airline#extensions#tabline#fnamemod = ':t'
 
 " NERDTree
 let NERDTreeShowHidden = 0
@@ -350,7 +361,7 @@ Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 " Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
-Plug 'ton/vim-bufsurf'
+" Plug 'ton/vim-bufsurf'
 Plug 'mxw/vim-jsx'
 " Plug 'stefanoverna/vim-i18n'
 " Plug 'stefanoverna/vim-plumber'

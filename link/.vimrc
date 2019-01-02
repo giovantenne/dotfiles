@@ -2,9 +2,11 @@
 let mapleader=","
 
 " RSpec.vim mappings
-" map <Leader>x :call RunCurrentSpecFile()<CR>
-" map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>l :call RunLastSpec()<CR>
+map <Leader>x :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+let g:rspec_command = "Dispatch rspec {spec}"
+
 
 
 :imap kj <Esc>
@@ -44,7 +46,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " Airline
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
-
+let g:airline#extensions#bufferline#enabled = 0
 
 " let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
@@ -199,8 +201,8 @@ nnoremap <C-H> <C-W>h
 " nnoremap <leader>b :CtrlPBuffer<CR> " List other buffers
 noremap <leader>b :CtrlPBuffer<CR>
 map <leader>m :b#<CR> " Switch between the last two files
-map gn :bn<cr> " next buffer
-map gb :bp<CR> " Prev buffer
+map gn :BufSurfForward<cr> " next buffer
+map gb :BufSurfBack<CR> " Prev buffer
 
 " Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
 let c = 1
@@ -316,7 +318,7 @@ noremap <leader>gs :vsplit db/schema.rb<cr>
 noremap <leader>gg :vsplit Gemfile<cr>
 
 nnoremap <leader>v :execute "vsplit " . bufname("#")<CR>
-nnoremap <leader>x :execute "split " . bufname("#")<CR>
+nnoremap <leader>i :execute "split " . bufname("#")<CR>
 nnoremap <leader>q :q<CR>
 
 vmap <Leader>z :call I18nTranslateString()<CR>
@@ -326,6 +328,9 @@ nmap <leader>dd "xdd
 vmap <leader>d "xd
 vmap <leader>y "xy
 map <leader>p "xp
+
+
+let g:pymode_rope = 0
 
 " set clipboard=unnamedplus
 
@@ -347,11 +352,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
-Plug 'klen/python-mode', {'for': 'python'}
+Plug 'python-mode/python-mode'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-dispatch'
 Plug 'slim-template/vim-slim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
@@ -361,7 +367,7 @@ Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
 " Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
-" Plug 'ton/vim-bufsurf'
+Plug 'ton/vim-bufsurf'
 Plug 'mxw/vim-jsx'
 " Plug 'stefanoverna/vim-i18n'
 " Plug 'stefanoverna/vim-plumber'
@@ -373,4 +379,6 @@ Plug 'mbbill/undotree'
 " Plug 'MarcWeber/vim-addon-mw-utils'
 " Plug 'garbas/vim-snipmate'
 " Plug 'tomtom/tlib_vim'
+Plug 'iberianpig/tig-explorer.vim'
+
 call plug#end()

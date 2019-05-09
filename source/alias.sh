@@ -22,6 +22,7 @@ alias search="apt-cache search"
 
 alias k=kubectl
 alias kube=kubectl
+source <(kubectl completion bash)
 complete -F __start_kubectl k
 
 

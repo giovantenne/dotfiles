@@ -21,7 +21,9 @@ alias remove="sudo apt-get remove"
 alias search="apt-cache search"
 
 alias k=kubectl
+alias kube=kubectl
 complete -F __start_kubectl k
+
 
 alias rs='rails server -b 0.0.0.0 -p 3000'
 alias rc='rails c'

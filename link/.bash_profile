@@ -9,4 +9,6 @@ if [ -n "$BASH" ] && [ -r ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+source <(kubectl completion bash)
+complete -F __start_kubectl k
 

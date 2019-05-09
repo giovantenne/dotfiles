@@ -22,8 +22,6 @@ alias search="apt-cache search"
 
 alias k=kubectl
 alias kube=kubectl
-source <(kubectl completion bash)
-complete -F __start_kubectl k
 
 
 alias rs='rails server -b 0.0.0.0 -p 3000'

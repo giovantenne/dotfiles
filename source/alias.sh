@@ -20,7 +20,10 @@ alias install="sudo apt-get install"
 alias remove="sudo apt-get remove"
 alias search="apt-cache search"
 
-alias rs='rails s'
+alias k=kubectl
+complete -F __start_kubectl k
+
+alias rs='rails server -b 0.0.0.0 -p 3000'
 alias rc='rails c'
 alias besk='bundle exec sidekiq'
 

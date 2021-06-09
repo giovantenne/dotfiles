@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+PG_VERSION=${1:-11}
+VOLUME=${2:-postgis$PG_VERSION}
+EXTERNAL_PORT=${3:-5432}
+
+mkdir -p /tmp/docker-pg
+chmod 0777 /tmp/docker-pg
+
+docker \
+  run \
+  --publish $EXTERNAL_PORT:5432 \
+  --volume /tmp/docker-pg:/tmp \
+  --volume $VOLUME:/var/lib/postgresql/data \
+  mdillon/postgis:$PG_VERSION

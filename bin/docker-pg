@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+PG_VERSION=${1:-12}
+VOLUME=${2:-pg$PG_VERSION}
+
+ssl_csr=/tmp/server.req
+ssl_initial_key=/tmp/privkey.pem
+ssl_key=/tmp/server.key
+ssl_cert=/tmp/server.crt
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  postgres_uid=999
+  postgres_gid=999
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  postgres_uid=$UID
+  postgres_gid=wheel
+fi
+temporary_password=mysecret
+
+if [ ! -f "$ssl_key" ]
+then
+  openssl req -new -text -passout pass:$temporary_password -subj /CN=localhost -out $ssl_csr -keyout $ssl_initial_key
+  openssl rsa -in $ssl_initial_key -passin pass:$temporary_password -out $ssl_key
+  openssl req -x509 -in $ssl_csr -text -key $ssl_key -out $ssl_cert
+  sudo chmod 600 $ssl_key
+  sudo chown $postgres_uid:$postgres_gid $ssl_key
+fi
+
+# Provide a directory for dumps, etc
+mkdir -p /tmp/docker-pg
+chmod 0777 /tmp/docker-pg
+
+docker \
+  run \
+  --publish 5432:5432 \
+  --rm \
+  --volume /tmp/docker-pg:/tmp \
+  --volume $VOLUME:/var/lib/postgresql/data \
+  -v $ssl_cert:/var/lib/postgresql/server.crt \
+  -v $ssl_key:/var/lib/postgresql/server.key \
+  -e POSTGRES_HOST_AUTH_METHOD=trust \
+  postgres:$PG_VERSION \
+  -c ssl=on \
+  -c ssl_cert_file=/var/lib/postgresql/server.crt \
+  -c ssl_key_file=/var/lib/postgresql/server.key

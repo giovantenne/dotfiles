@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+ES_VERSION=${1:-6.8.6}
+
+docker run --publish 9200:9200 elasticsearch:$ES_VERSION

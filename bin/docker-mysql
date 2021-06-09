@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+MYSQL_VERSION=${1:-5.7}
+VOLUME=${2:-mysql$MYSQL_VERSION}
+
+docker \
+  run \
+  --publish 3306:3306 \
+  --volume $VOLUME:/var/lib/mysql \
+  --env=MYSQL_ALLOW_EMPTY_PASSWORD=1 \
+  mysql:$MYSQL_VERSION

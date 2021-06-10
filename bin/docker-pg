@@ -38,10 +38,13 @@ docker \
   --publish 5432:5432 \
   --rm \
   --volume /tmp/docker-pg:/tmp \
-  --volume $VOLUME:/var/lib/postgresql/data \
+  --volume /tmp/$VOLUME:/var/lib/postgresql/data \
   -v $ssl_cert:/var/lib/postgresql/server.crt \
   -v $ssl_key:/var/lib/postgresql/server.key \
+  -v /var/run/postgresql:/var/run/postgresql \
   -e POSTGRES_HOST_AUTH_METHOD=trust \
+  -e POSTGRES_PASSWORD=claudio \
+  -e POSTGRES_USER=claudio \
   postgres:$PG_VERSION \
   -c ssl=on \
   -c ssl_cert_file=/var/lib/postgresql/server.crt \

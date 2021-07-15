@@ -7,8 +7,6 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 let g:rspec_command = "Dispatch rspec {spec}"
 
-
-
 :imap kj <Esc>
 :imap jk <Esc>
 
@@ -22,7 +20,7 @@ nnoremap k gk
 " Easier access to system clipboard
 " nnoremap P "*p
 " nnoremap Y "*y
-
+"
 " stop entering in ex mode
 nnoremap Q <nop>
 
@@ -47,16 +45,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#fnamecollapse = 0
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#bufferline#enabled = 0
-
-" let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
-" let g:airline_theme='powerlineish'
-" let g:airline#extensions#syntastic#enabled = 1
-" set laststatus=2
-
-
-
-
 
 " The silver searcher
 let g:ag_working_path_mode="r"
@@ -204,16 +192,6 @@ map <leader>m :b#<CR> " Switch between the last two files
 map gn :BufSurfForward<cr> " next buffer
 map gb :BufSurfBack<CR> " Prev buffer
 
-" Jump to buffer number 1-9 with ,<N> or 1-99 with <N>gb
-let c = 1
-while c <= 99
-  if c < 10
-    execute "nnoremap <silent> <leader>" . c . " :" . c . "b<CR>"
-  endif
-  execute "nnoremap <silent> " . c . "gb :" . c . "b<CR>"
-  let c += 1
-endwhile
-
 " Fix page up and down
 map <PageUp> <C-U>
 map <PageDown> <C-D>
@@ -311,7 +289,7 @@ else
   endif
 endif
 
-let g:jsx_ext_required = 0
+" let g:jsx_ext_required = 0
 
 noremap <leader>gr :vsplit config/routes.rb<cr>
 noremap <leader>gs :vsplit db/schema.rb<cr>
@@ -330,58 +308,73 @@ vmap <leader>y "xy
 map <leader>p "xp
 
 
+let g:ansible_unindent_after_newline = 1
 let g:pymode_rope = 0
 
 " set clipboard=unnamedplus
 
+" Arduino setup
+let g:arduino_cmd = '/snap/bin/arduino'
+let g:arduino_dir = '/home/claudio/snap/arduino/current'
+let g:arduino_home_dir = '/home/claudio/snap/arduino/32/.arduino15'
+
+" HELTEC
+" let g:arduino_board = 'esp32:esp32:heltec_wifi_kit_32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+
+" TTGO
+" TEST let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=app3M_fat9M_16MB,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+" TEST let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=huge_app,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+
+let g:arduino_serial_baud = 115200
+let g:arduino_serial_cmd = 'picocom {port} -b 115200 -l'
+
+let g:slime_paste_file = tempname()
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:arduino_use_slime = 1
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+nnoremap <leader>am :ArduinoVerify<CR>
+nnoremap <leader>au :ArduinoUpload<CR>
+nnoremap <leader>as :ArduinoSerial<CR>
+nnoremap <leader>aus :ArduinoUploadAndSerial<CR>
+
+" let g:polyglot_disabled = ['jsx']
+
 call plug#begin('~/.vim/plugged')
+
+Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'sheerun/vim-polyglot'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'editorconfig/editorconfig-vim'
-" Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'nathanaelkane/vim-indent-guides'
-" Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 Plug 'mhinz/vim-signify'
 Plug 'mattn/emmet-vim'
-Plug 'python-mode/python-mode'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-bundler'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-dispatch'
-" Plug 'slim-template/vim-slim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
-Plug 'isRuslan/vim-es6'
-" Plug 'tpope/vim-abolish'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-endwise'
-" Plug 'svermeulen/vim-easyclip'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ton/vim-bufsurf'
-" Plug 'mxw/vim-jsx'
-
-" Plug 'stefanoverna/vim-i18n'
-" Plug 'stefanoverna/vim-plumber'
-" Plug 'elixir-lang/vim-elixir'
-" Plug 'slashmili/alchemist.vim'
 Plug 'mbbill/undotree'
-" Plug 'kchmck/vim-coffee-script'
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'garbas/vim-snipmate'
-" Plug 'tomtom/tlib_vim'
 Plug 'iberianpig/tig-explorer.vim'
-" Plug 'chaoren/vim-wordmotion'
-Plug 'sheerun/vim-polyglot'
+Plug 'stevearc/vim-arduino'
+Plug 'jpalardy/vim-slime'
+Plug 'pearofducks/ansible-vim'
+Plug 'tomlion/vim-solidity'
+
 
 call plug#end()

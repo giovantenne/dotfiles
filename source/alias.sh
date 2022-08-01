@@ -64,3 +64,4 @@ alias grr='git remote rm'
 alias gcl='git clone'
 alias tig='tig --all'
 alias gfr='git fetch; git rebase origin/master'
+

@@ -319,12 +319,12 @@ let g:arduino_dir = '/home/claudio/snap/arduino/current'
 let g:arduino_home_dir = '/home/claudio/snap/arduino/32/.arduino15'
 
 " HELTEC
-" let g:arduino_board = 'esp32:esp32:heltec_wifi_kit_32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+let g:arduino_board = 'esp32:esp32:heltec_wifi_kit_32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
 
 " TTGO
 " TEST let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=app3M_fat9M_16MB,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
 " TEST let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
-let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=huge_app,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
+" let g:arduino_board = 'esp32:esp32:esp32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=huge_app,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'
 
 let g:arduino_serial_baud = 115200
 let g:arduino_serial_cmd = 'picocom {port} -b 115200 -l'
@@ -338,6 +338,13 @@ nnoremap <leader>am :ArduinoVerify<CR>
 nnoremap <leader>au :ArduinoUpload<CR>
 nnoremap <leader>as :ArduinoSerial<CR>
 nnoremap <leader>aus :ArduinoUploadAndSerial<CR>
+" Exit serial with CRTL+aax
+
+set path=.,src,node_nodules
+set suffixesadd=.js,.jsx
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " let g:polyglot_disabled = ['jsx']
 
@@ -375,6 +382,6 @@ Plug 'stevearc/vim-arduino'
 Plug 'jpalardy/vim-slime'
 Plug 'pearofducks/ansible-vim'
 Plug 'tomlion/vim-solidity'
-
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()

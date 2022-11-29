@@ -31,6 +31,8 @@ alias besk='bundle exec sidekiq'
 alias es6='docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.2.4'
 alias es5='sudo sysctl -w vm.max_map_count=262144; docker run -p 127.0.0.1:9200:9200 elasticsearch:5.0'
 
+alias dokku='ssh dokku@dokku.benve.it'
+
 alias g='git'
 alias gp='git push'
 alias ga='git add .'

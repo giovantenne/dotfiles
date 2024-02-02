@@ -316,7 +316,7 @@ let g:pymode_rope = 0
 " Arduino setup
 let g:arduino_cmd = '/snap/bin/arduino'
 let g:arduino_dir = '/home/claudio/snap/arduino/current'
-let g:arduino_home_dir = '/home/claudio/snap/arduino/32/.arduino15'
+let g:arduino_home_dir = '/home/claudio/snap/arduino/33/.arduino15'
 
 " HELTEC
 let g:arduino_board = 'esp32:esp32:heltec_wifi_kit_32:FlashSize=4M,DebugLevel=none,UploadSpeed=921600,PartitionScheme=default,CPUFreq=240,FlashMode=qio,FlashFreq=40,PSRAM=disabled'

@@ -16,7 +16,3 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 . ~/.dotfiles/bin/z.sh
 
 # eval "$(rbenv init -)"
-
-. "$HOME/.asdf/asdf.sh"
-. "$HOME/.asdf/completions/asdf.bash"
-# . "$HOME/.asdf/plugins/java/set-java-home.bash"

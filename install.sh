@@ -34,8 +34,9 @@ fi
 
 # ASDF
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
-echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bashrc
-echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bashrc
+echo '. "$HOME/.asdf/asdf.sh"' >> ~/.bash_profile
+echo '. "$HOME/.asdf/completions/asdf.bash"' >> ~/.bash_profile
+
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git

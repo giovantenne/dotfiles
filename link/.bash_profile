@@ -19,8 +19,4 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
-. "$HOME/.asdf/plugins/java/set-java-home.bash"
-
-
-
-
+# . "$HOME/.asdf/plugins/java/set-java-home.bash"

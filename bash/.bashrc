@@ -1,0 +1,48 @@
+# All the default Omarchy aliases and functions
+# (don't mess with these directly, just overwrite them here!)
+source ~/.local/share/omarchy/default/bash/rc
+
+# Add your own exports, aliases, and functions here.
+#
+# Make an alias for invoking commands you use constantly
+# alias p='python'
+#
+# Use VSCode instead of neovim as your default editor
+# export EDITOR="code"
+#
+# Set a custom prompt with the directory revealed (alternatively use https://starship.rs)
+# PS1="\W \[\e]0;\w\a\]$PS1"
+
+export PATH=$PATH:$HOME/.local/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/claudio/google-cloud-sdk/path.bash.inc' ]; then . '/home/claudio/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/claudio/google-cloud-sdk/completion.bash.inc' ]; then . '/home/claudio/google-cloud-sdk/completion.bash.inc'; fi
+
+alias k=kubectl
+alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
+
+alias md='git push'
+alias ga='git add .'
+alias gp='git push'
+alias gpa='git push --all'
+alias gpo='git push origin master'
+alias gph='git push heroku master'
+alias gpp='git push production master'
+alias gpomp='git push origin master:production'
+alias hrrc='heroku run rails c'
+alias hrrcp='heroku run rails c -r production'
+alias gl='git log'
+alias gs='git status'
+alias gma='git commit -am'
+alias gb='git branch'
+alias gd='git diff'
+alias tig='tig --all'
+alias doco='docker-compose'
+alias pio='~/.platformio/penv/bin/platformio'
+
+source <(kubectl completion bash)
+alias k=kubectl
+complete -o default -F __start_kubectl k

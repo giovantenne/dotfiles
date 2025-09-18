@@ -43,6 +43,12 @@ alias tig='tig --all'
 alias doco='docker-compose'
 alias pio='~/.platformio/penv/bin/platformio'
 
+HISTSIZE=50000
+HISTFILESIZE=50000
+HISTCONTROL=ignoreboth
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
+
 source <(kubectl completion bash)
 alias k=kubectl
 complete -o default -F __start_kubectl k

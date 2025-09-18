@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-REDIS_VERSION=${1:-latest}
-
-docker run --publish 6379:6379 redis:$REDIS_VERSION

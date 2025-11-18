@@ -185,7 +185,7 @@
     "format": "{}°",
     "tooltip": true,
     "interval": 600,
-    "exec": "wttrbar",
+    "exec": "wttrbar --location Florence",
     "return-type": "json"
   },
 

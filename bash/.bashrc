@@ -27,7 +27,7 @@ if [ -f '/home/claudio/google-cloud-sdk/completion.bash.inc' ]; then . '/home/cl
 alias k=kubectl
 alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-alias md='git push'
+alias gp='git push'
 alias ga='git add .'
 alias gp='git push'
 alias gpa='git push --all'
@@ -46,6 +46,10 @@ alias tig='tig --all'
 alias doco='docker-compose'
 alias pio='~/.platformio/penv/bin/platformio'
 
+function md() {
+  mkdir -p "$@" && cd "$@"
+}
+
 HISTSIZE=50000
 HISTFILESIZE=50000
 HISTCONTROL=ignoreboth
@@ -55,3 +59,8 @@ PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 source <(kubectl completion bash)
 alias k=kubectl
 complete -o default -F __start_kubectl k
+
+# Initialize mise so its shims (mvn, node, ruby, etc.) are always on PATH.
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate bash)"
+fi

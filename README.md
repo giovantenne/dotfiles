@@ -1,6 +1,6 @@
 # dotfiles (GNU Stow)
 
-Override Omarchy defaults (`~/.local/share/omarchy/`) with symlinks managed by `stow`.
+Manage your dotfiles with symlinks created by `stow`.
 
 ## How this repo is organized
 
@@ -20,6 +20,18 @@ waybar/.config/waybar/config.jsonc  ->  ~/.config/waybar/config.jsonc
 
 ## Basic commands
 
+Show available flags:
+
+```bash
+stow --help
+```
+
+Dry run (preview without changes):
+
+```bash
+cd ~/dotfiles && stow -n -v -t ~ waybar
+```
+
 Apply one package:
 
 ```bash
@@ -38,6 +50,18 @@ Apply all packages:
 cd ~/dotfiles && stow -t ~ */
 ```
 
+Re-stow a package (relink/update symlinks):
+
+```bash
+cd ~/dotfiles && stow -R -t ~ waybar
+```
+
+Adopt existing files into a package:
+
+```bash
+cd ~/dotfiles && stow --adopt -t ~ waybar
+```
+
 Check if a managed file is still a symlink:
 
 ```bash
@@ -46,9 +70,9 @@ ls -la ~/.config/waybar/config.jsonc
 
 ## Common scenarios
 
-### 1) After an Omarchy update (`omarchy-update`)
+### 1) After a system/app update
 
-Omarchy may replace files in `~/.config/` with regular files. If that happens, re-adopt and re-stow.
+Some updates may replace files in `~/.config/` with regular files. If that happens, re-adopt and re-stow.
 
 ```bash
 cd ~/dotfiles
